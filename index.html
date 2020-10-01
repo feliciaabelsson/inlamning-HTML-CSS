@@ -14,18 +14,18 @@
 
     <!-- Main nav -->
     <nav>
-        <a href="#">Products</a>
-        <a href="#">About us</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="pages/recipe.html">Recipes</a>
+        <a href="#">Subscribe</a>
     </nav>
 
     <section class="top-menu">
-        <img src="./img/menu.svg" alt="menu-icon">
+        <img src="./img/menu.svg" alt="menu icon" class="menu-icon">
     </section>
 
     <!-- Main header -->
     <header class="main-header">
-        <h1>Autumn Craftings</h1>
+        <a href="index.html"><h1>Autumn Craftings</h1></a>
         <aside class="social-media-header">
             <ion-icon name="logo-facebook"></ion-icon>
             <ion-icon name="logo-instagram"></ion-icon>
@@ -36,6 +36,7 @@
     
     <!-- Article Top Crafts -->
     <article class="top-crafts basic-styling">
+        <section class="white-space"></section>
         <h2>Our Top Crafts</h2>
         <section class="crafts-grid">
             <article>
@@ -46,28 +47,43 @@
                 <figure class="overlay"><img src="./img/craft-2.jpg" alt="wreth"></figure>
                 <h3>Wreth</h3>
             </article>
-            <article>
+            <article class="third">
                 <figure class="overlay"><img src="./img/craft-3.jpg" alt="hot tea"></figure>
                 <h3>Hot Tea</h3>
             </article>
+
+                <article class="grid-desktop-only">
+                    <figure class="overlay"><img src="./img/craft-4.jpg" alt="pumpkins"></figure>
+                    <h3>Pumpkins</h3>
+                </article>
+                <article class="grid-desktop-only">
+                    <figure class="overlay"><img src="./img/craft-5.jpg" alt="wreth"></figure>
+                    <h3>Wreth</h3>
+                </article>
+                <article class="grid-desktop-only">
+                    <figure class="overlay"><img src="./img/craft-6.jpg" alt="hot tea"></figure>
+                    <h3>Hot Tea</h3>
+                </article>
         </section>
         <section class="go-to-all-crafts">
-            <h4>Go to all</h4>
+            <h4>See more</h4>
             <img src="./img/arrows.svg" alt="arrow">
         </section>      
     </article>
 
     <!-- Article Hot Chocolate -->
     <article class="hot-chocolate basic-styling">
-        <h2>Better, hotter. Make our famous hot chocolate.</h2>
-        <p>Aliquam magna tellus, efficitur sed commodo ut, semper 
-            et ipsum. Vivamus sodales dui id mi porta, eget tincidunt 
-            ex cursus. Vivamus id diam ultricies, hendrerit nunc a, finibus neque. 
-            Integer posuere diam id quam tempus, at tincidunt augue sagittis. 
-            Nullam egestas volutpat nisl eget efficitur.</p>
+        <section>
+            <h2>Better, hotter. Make our famous hot chocolate.</h2>
+            <p>Aliquam magna tellus, efficitur sed commodo ut, semper 
+                et ipsum. Vivamus sodales dui id mi porta, eget tincidunt 
+                ex cursus. Vivamus id diam ultricies, hendrerit nunc a, finibus neque. 
+                Integer posuere diam id quam tempus, at tincidunt augue sagittis. 
+                Nullam egestas volutpat nisl eget efficitur.</p>
+        </section>
         <figure><img src="./img/hot-chocolate.jpg" alt="hot chocolate"></figure>
         <button class="btn btn-white">
-            <a>Read more</a>
+            <a href="pages/recipe.html">Go to recipe</a>
         </button>
     </article>
     
@@ -93,7 +109,8 @@
     </footer>
 
     <!-- JS script -->
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="script/script.js"></script>
-    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    
 </body>
 </html>
