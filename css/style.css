@@ -8,8 +8,9 @@
     --header-gradiant-overlay: linear-gradient(
         rgba(146, 131, 93, 0.3), 
         rgba(146, 131, 93, 0.3));
-
-    
+    --grid-gradiant-overlay: linear-gradient(
+        rgba(44, 44, 44, 1), 
+        rgba(44, 44, 44, 1));
 }
 
 /* 
@@ -25,8 +26,13 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: 0;
+}
+
+p {
+    font-size: .75rem;
+    line-height: 1.1rem;
 }
 
 p,
@@ -36,13 +42,26 @@ h4,
 h5,
 a {
     font-family: 'PT Sans', sans-serif; 
+    color: var(--dark-grey);
+    letter-spacing: .02rem;
 }
 
 article.basic-styling {
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
-    padding: 2rem 0;
+    padding: 3rem 0;
+}
+
+.btn {
+    border: none;
+    border-radius: 20px 20px;
+    font-size: 1rem;
+    padding: .7rem 5rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /*--x-- Global --x--*/
@@ -112,9 +131,26 @@ article.top-crafts h2{
 section.crafts-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
+}
+
+section.crafts-grid article {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.crafts-grid article h3 {
+    position: absolute;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-shadow: 0 0 .5rem rgba(0,0,0,.2);
 }
 
 section.crafts-grid figure {
@@ -129,26 +165,97 @@ section.crafts-grid figure img {
     object-position: center;
 }
 
+section.go-to-all-crafts {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section.go-to-all-crafts img {
+    width: 20px;
+    height: 20px;
+    padding-left: .5rem;
+}
 
 /*--x-- Article Top Crafts --x--*/
 
 
 /*----- Article Hot Chocolate -----*/
 article.hot-chocolate {
-    background: khaki;
+    background: var(--orange);
 }
+
+article.hot-chocolate p {
+    padding: 0 2rem;
+}
+
+article.hot-chocolate figure {
+   margin: 0;
+   padding: 2rem;   
+}
+
+article.hot-chocolate figure img {
+    border-radius: 5% 5%;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 2rem rgba(0,0,0, .1);
+}
+
+article.hot-chocolate button {
+    margin-left: 2rem;
+    background: white;
+}
+
 /*--x-- Article Hot Chocolate --x--*/
 
 
 /*----- Article Subscribe -----*/
 article.subscribe {
-    background: beige;
+    background: var(--dark-grey);
+    text-align: center;
 }
+
+article.subscribe h2,
+article.subscribe p,
+article.subscribe a {
+    color: white;
+}
+
+article.subscribe p {
+    padding: 0 3rem; 
+}
+
+article.subscribe .btn {
+    background: var(--orange);
+}
+
 /*--x-- Article Subscribe --x--*/
 
 
 /*----- Main Footer -----*/
 footer {
-    background: blue;
+    background: var(--grey);
+}
+
+footer h5 {
+    margin: 0;
+    padding-bottom: 1rem;
+    color: white;
+}
+
+footer  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+footer .social-media ion-icon {
+    color: white;
+    padding: 0 .5rem;
 }
 /*--x-- Main Footer --x--*/
