@@ -1,0 +1,91 @@
+/*----- Global -----*/
+
+:root {
+    --max-width: 1000px;
+}
+
+/* 
+font-family: 'Englebert', sans-serif; */
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Chela One', cursive;
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+a {
+    font-family: 'PT Sans', sans-serif; 
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*--x-- Global --x--*/
+
+
+/*----- Main nav -----*/
+nav {
+    background: pink;
+    position: fixed;
+}
+
+/*--x-- Main nav --x--*/
+
+
+/*----- Main header -----*/
+header.main-header {
+    background: url(./);
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    color: white;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 .5rem rgba(0,0,0,.1);
+}
+
+
+/*--x-- Main header --x--*/
+
+
+/*----- Article Top Crafts -----*/
+article.top-crafts {
+    background: red;
+}
+/*--x-- Article Top Crafts --x--*/
+
+
+/*----- Article Hot Chocolate -----*/
+article.hot-chocolate {
+    background: khaki;
+}
+/*--x-- Article Hot Chocolate --x--*/
+
+
+/*----- Article Subscribe -----*/
+article.subscribe {
+    background: beige;
+}
+/*--x-- Article Subscribe --x--*/
+
+
+/*----- Main Footer -----*/
+footer {
+    background: blue;
+}
+/*--x-- Main Footer --x--*/
