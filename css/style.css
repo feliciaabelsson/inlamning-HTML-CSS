@@ -14,15 +14,21 @@
         rgba(44, 44, 44, 1));
 }
 
-/* 
-font-family: 'Englebert', sans-serif; */
-
 body {
     margin: 0;
 }
 
 h1 {
     font-family: 'Chela One', cursive;
+    font-size: 4.5rem;
+    text-align: center;
+    color: white;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 .5rem rgba(0,0,0,.1);
+    line-height: 5.5rem;
+    margin: 0;
+    padding: 1rem;
+    padding-top: 8rem;
 }
 
 h2 {
@@ -42,14 +48,16 @@ p {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 p,
 h2,
 h3,
 h4,
-h5,
-a {
+h5, 
+a
+ {
     font-family: 'PT Sans', sans-serif; 
     color: var(--dark-grey);
     letter-spacing: .02rem;
@@ -69,8 +77,10 @@ article.basic-styling {
     padding: .7rem 5rem;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;   
+    color: white;
+    transition-duration: .4s;
 }
 
 figure {
@@ -142,9 +152,9 @@ body.menu-open nav a:nth-child(3) {
     width: 50px;
 }
 
-/*----- Main header -----*/
-header.main-header {
-    background:  var(--header-gradiant-overlay),
+/*----- Hero -----*/
+header.hero {
+    background: var(--header-gradiant-overlay),
     url(../img/header-small.jpg) no-repeat #F89150;
     background-size: cover;
     height: 60vh;
@@ -154,24 +164,12 @@ header.main-header {
     flex-direction: column; 
 }
 
-.main-header h1 {
-    font-size: 4.5rem;
-    text-align: center;
-    color: white;
-    letter-spacing: .3rem;
-    text-shadow: 0 0 .5rem rgba(0,0,0,.1);
-    line-height: 5.5rem;
-    margin: 0;
-    padding: 1rem;
-    padding-top: 8rem;
-}
-
-aside.social-media-header {
+aside.social-media-hero {
     display: flex;
     justify-content: center;
 }
 
-.social-media-header ion-icon{
+.social-media-hero ion-icon{
    font-size: 2.5rem;
    padding: .5rem;
    color: white;
@@ -186,7 +184,7 @@ article.top-crafts {
     box-shadow: 0 0 2rem rgba(0,0,0, .1);
 }
 
-article.top-crafts h2{
+article.top-crafts h2 {
     text-align: center;
 }
 
@@ -213,11 +211,13 @@ section.crafts-grid article h3 {
     text-transform: uppercase;
     letter-spacing: .2rem;
     text-shadow: 0 0 .5rem rgba(0,0,0,.2);
+    text-align: center;
 }
 
 section.crafts-grid figure {
     margin: 0;
     padding: 0;
+    transition: all .5s;
 }
 
 section.crafts-grid figure img {
@@ -241,6 +241,21 @@ section.go-to-all-crafts img {
     padding-left: .5rem;
 }
 
+.keyframe-moving-arrows {
+    animation: moving-arrows .7s ease-in-out infinite alternate;
+}
+
+/*Gör så att pilarna rör sig fram och tillbaka*/
+@keyframes moving-arrows {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(10px);
+    }
+}
+
 .grid-desktop-only {
     display: none !important;
 }
@@ -256,8 +271,6 @@ section.go-to-all-crafts img {
 /*----- Article Hot Chocolate -----*/
 article.hot-chocolate {
     background: var(--orange);
-    /* display: flex;
-    flex-direction: column; */
 }
 
 article.hot-chocolate p {
@@ -278,10 +291,10 @@ article.hot-chocolate figure img {
     box-shadow: 0 0 2rem rgba(0,0,0, .1);
 }
 
-article.hot-chocolate button {
-    margin: 0 2rem;
+.btn-white {
     background: white;
-    
+    color: var(--dark-grey);
+    margin-left: 2rem;
 }
 
 /*--x-- Article Hot Chocolate --x--*/
@@ -303,9 +316,8 @@ article.subscribe p {
     padding: 0 3rem; 
 }
 
-article.subscribe .btn {
+.btn-orange {
     background: var(--orange);
-    margin-top: 3rem;
 }
 
 /*--x-- Article Subscribe --x--*/
@@ -363,6 +375,7 @@ aside.share-options {
 }
 aside.share-options ion-icon {
     padding: 0 1rem;
+    color: var(--dark-grey);
 }
 
 .recipe h4 {
@@ -424,7 +437,7 @@ footer  {
 footer .social-media ion-icon {
     color: white;
     padding: 0 .5rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 /*--x-- Main Footer --x--*/
 
@@ -516,13 +529,46 @@ footer .social-media ion-icon {
         align-self: center;
     }
 
-
     /* Recipe page */
 
     .white-space {
         background: white;
         height: 4rem;
         transform: translateY(-3.9rem);
+    }
+
+    .recipe-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 2, 1fr;
+        padding-bottom: 3rem;
+        padding-left: 3rem;
+    }
+
+    figure.hot-chocolate-img {
+        grid-row: 1 / 2;
+        padding-top: 4rem;
+    }
+
+    section.instructions {
+        grid-row: 2/3;
+        grid-column: 2/4;
+        padding-top: 0;
+        align-self: center;
+    }
+
+    section.ingredients {
+       align-self:  center;
+       padding-top: 0 !important;
+    }
+
+    .recipe h4, .recipe p {
+        text-align: left;
+    }
+
+    aside.share-options {
+        grid-row: 2/3;
+        grid-column: 1;
     }
 
     .recipe.basic-styling {
@@ -538,14 +584,37 @@ footer .social-media ion-icon {
     }
 
 
+    /*Animations Desktop*/
+    section.crafts-grid figure:hover {
+        transform: scale(1.1);
+        filter: brightness(.4);
+    }
 
-  
+    section.go-to-all-crafts h4:hover {
+        color: var(--grey);
+        transform: translateX(5px);
+        transition: all .5s ease;
+    }
 
+    ion-icon:hover {
+        transform: scale(1.1);
+        transition: all .5s ease;
+        color: var(--orange) !important;
+    }
 
+    .btn:hover {
+        transform: scale(1.05);
+    }
 
+    .btn-orange:hover {
+        background: rgb(150, 64, 11);
+    }
 
-    
-    
+    .btn-white:hover {
+        background: rgb(226, 226, 226);
+        
+    }
+
 
 
 }
