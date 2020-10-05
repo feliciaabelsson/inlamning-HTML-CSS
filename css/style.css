@@ -110,6 +110,39 @@ body.menu-open nav {
     transform: translateY(0%);
 }
 
+/* Transforming menu icon to X */
+body.menu-open .menu-middle-line {
+    opacity: 0;
+    transition: all .2s ease;
+} 
+
+body.menu-open .menu-first-line {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform-origin: 25%;
+    -webkit-transform-origin: 25%;
+    transition: all .3s ease;
+} 
+
+body.menu-open .menu-last-line {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform-origin: 25%;
+    -webkit-transform-origin: 25%;
+    transition: all .3s ease;  
+} 
+
+/*To make X back to hamburger in Safari Browser*/
+.menu-first-line {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+} 
+
+.menu-last-line {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+} 
+
 nav a {
     font-size: 2rem;
     color: white;
@@ -138,49 +171,66 @@ body.menu-open nav a:nth-child(3) {
     transition-delay: .4s;
 } 
 
-
 /*--x-- Main nav --x--*/
+
 
 /*----- Menu bar -----*/
 
 .top-menu {
     position: absolute;
     right: 0;
-    padding: 2rem;
+    top: 0;
+    padding: 1.5rem;
     z-index: 9999;
-}
-
-.top-menu img {
-    width: 50px;
 }
 
 /*--x-- Menu bar --x--*/
 
+
 /*----- Hero -----*/
 
-header.hero {
-    background: var(--header-gradiant-overlay),
-    url(../img/header-small.jpg) no-repeat #F89150;
+.hero {
+    background: url(../img/header-small.jpg);  
+    background-repeat: no-repeat;
     background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;   
     height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     flex-direction: column; 
 }
 
-aside.social-media-hero {
-    display: flex;
-    justify-content: center;
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(146, 131, 93, 0.3);
+    z-index: initial;
+}
+
+.social-media-hero {
+    z-index: 9;
 }
 
 .social-media-hero ion-icon{
-   font-size: 2.5rem;
-   padding: .5rem;
-   color: white;
-   text-shadow: 0 0 .5rem rgba(0,0,0,.1);
-}
+    font-size: 2.5rem;
+    padding: .5rem;
+    color: white;
+    text-shadow: 0 0 .5rem rgba(0,0,0,.1);
+ }
 
+ .hero-heading {
+     z-index: 55;
+ }
+ 
 /*--x-- Hero --x--*/
 
 
@@ -202,36 +252,67 @@ article.top-crafts h2 {
     padding: 1rem 2rem;
 }
 
+.grid-desktop-only {
+    display: none !important;
+}
+
+.grid-box-1 {
+    background: url(../img/craft-1.jpg) no-repeat;
+}
+
+.grid-box-2 {
+    background: url(../img/craft-2.jpg) no-repeat;
+}
+
+.grid-box-3 {
+    background: url(../img/craft-3.jpg) no-repeat;
+}
+
+.grid-box-4 {
+    background: url(../img/craft-4.jpg) no-repeat;
+}
+
+.grid-box-5 {
+    background: url(../img/craft-5.jpg) no-repeat;
+}
+
+.grid-box-6 {
+    background: url(../img/craft-6.jpg) no-repeat;
+}
+
 .crafts-grid-boxes {
+    width: 100%;
+    min-height: 20rem;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.7rem;
+    text-align: center;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.521);
+    font-family: 'PT sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    text-transform: uppercase;  
+    position: relative;
+}
+
+.background-filter::before { 
+    backdrop-filter: brightness(60%);
+    -webkit-backdrop-filter: brightness(60%);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.crafts-grid-boxes-content {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.crafts-grid-boxes h3 {
-    position: absolute;
-    font-size: 2.5rem;
-    color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    text-shadow: 0 0 .5rem rgba(0,0,0,.2);
-    text-align: center;
-}
-
-.crafts-grid figure {
-    margin: 0;
-    padding: 0;
-    transition: all .5s;
-}
-
-.crafts-grid figure img {
-    width: 100%;
-    height: 20rem;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(.7);
 }
 
 .go-to-all-crafts {
@@ -262,14 +343,6 @@ article.top-crafts h2 {
     }
 }
 
-.grid-desktop-only {
-    display: none !important;
-}
-
-.grid-desktop-only h3 {
-    justify-self: center;
-}
-
 /*--x-- Article Top Crafts --x--*/
 
 
@@ -288,7 +361,7 @@ article.hot-chocolate figure {
    padding: 2rem;   
 }
 
-article.hot-chocolate figure img {
+.hot-chocolate figure img {
     border-radius: 5% 5%;
     width: 100%;
     height: 20rem;
@@ -299,8 +372,8 @@ article.hot-chocolate figure img {
 
 .btn-white {
     background: white;
-    color: var(--dark-grey);
     margin-left: 2rem;
+    color: var(--dark-grey);
 }
 
 /*--x-- Article Hot Chocolate --x--*/
@@ -330,7 +403,7 @@ article.subscribe p {
 /*--x-- Article Subscribe --x--*/
 
 
-/*----- Recipe -----*/
+/*----- Recipe Page -----*/
 
 .recipe {
     padding: 2rem;
@@ -350,19 +423,20 @@ article.subscribe p {
     text-align: center;
     font-family: 'Englebert', sans-serif;
     padding-bottom: .5rem;
+    line-height: 2.5rem;
 }
 
 .recipe-header figure {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
 .servings-info,
 .recipe-header ion-icon {
     color: var(--orange);
     margin: 0;
+    padding-right: .5rem;
 }
 
 .hot-chocolate-img {
@@ -371,6 +445,7 @@ article.subscribe p {
 
 .hot-chocolate-img img{
     width: 100%;
+    border-radius: 5% 5%;
 }
 
 aside.share-options {
@@ -408,18 +483,20 @@ section.instructions h6 {
     font-family: 'PT sans', sans-serif;
     font-size: 1rem;
     margin: .8rem 0 0 0;
+    margin-right: .5rem;
 }
 
 .instructions article {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .instructions p {
     max-width: 80%;
 }
 
-/*--x-- Recipe --x--*/
+/*--x-- Recipe Page --x--*/
 
 
 /*----- Main Footer -----*/
@@ -456,7 +533,7 @@ footer .social-media ion-icon {
 /* Tablet */
 @media screen and (min-width: 480px) {
 
-    section.crafts-grid  {
+    .crafts-grid  {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -468,11 +545,21 @@ footer .social-media ion-icon {
 /* Desktop */
 @media screen and (min-width: 760px) {
 
-    /* Global */
+    /* ----- Global -----*/
+
     .white-space {
         background: white;
         height: 4rem;
         transform: translateY(-3.9rem);
+        z-index: 12;
+    }
+
+    h1 {
+        padding-top: 0;
+    }
+
+    h4 {
+        font-size: 1.6rem;
     }
 
     p {
@@ -480,21 +567,32 @@ footer .social-media ion-icon {
         line-height: 1.5rem;
     }
 
-    h4 {
-        font-size: 1.6rem;
-    }
-
-    header.hero {
-        height: 80vh;
-    }
-
     .btn {
         padding: .7rem 2rem;
     }
 
-    /* Top crafts grid */
+    /* --x-- Global --x--*/
+
+    /*----- Hero -----*/
+
+    .hero {
+        height: 80vh;
+    }
+
+    .social-media-hero {
+        top: 0;
+        position: absolute;
+        padding: 1rem;
+        left: 0;
+    }
+
+    /*--x-- Hero --x--*/
+
+    /* ----- Top crafts grid ----- */
+
     .crafts-grid {
         transform: translateY(-1.5rem);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .top-crafts.basic-styling {
@@ -504,23 +602,30 @@ footer .social-media ion-icon {
     .top-crafts h2 {
         transform: translateY(-3rem);
     }
-    
-    section.crafts-grid  {
-        grid-template-columns: repeat(3, 1fr);
-    }
 
     .grid-desktop-only {
         display: grid !important;
     }
 
-    /* Subscribe */
+    .crafts-grid-boxes {
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+    /* --x-- Top crafts grid --x-- */
+
+    /* ----- Subscribe ----- */
+
     article.subscribe p {
         max-width: 30%; 
         margin: 0 auto;
         padding: 1em 0;
     }
 
-    /* Hot chocolate */
+    /* --x-- Subscribe --x-- */
+
+    /* ----- Hot chocolate ----- */
+
     article.hot-chocolate {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -538,16 +643,19 @@ footer .social-media ion-icon {
         align-self: flex-end;
     }
 
-    article.hot-chocolate button {
+    .btn-white {
         align-self: center;
+        justify-self: flex-start;
     }
+
+    /* --x-- Hot chocolate --x-- */
 
     /* ----- Recipe page ----- */
 
     .recipe-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 2, 1fr;
+        grid-template-rows: repeat(2, 1fr);
         padding-bottom: 3rem;
         padding-left: 3rem;
     }
@@ -591,17 +699,17 @@ footer .social-media ion-icon {
         font-size: 2.5rem;
     }
 
+    /* --x-- Recipe page --x-- */
 
-    /* Animations Desktop only */
+    /* ----- Animations Desktop only ----- */
 
-    section.crafts-grid figure:hover {
+    .crafts-grid-boxes:hover {
         transform: scale(1.1);
-        filter: brightness(.4);
-        
+        font-size: 3rem;
     }
 
     section.go-to-all-crafts h4:hover {
-        color: var(--grey);
+        color: var(--orange);
         transform: translateX(5px);
         transition: all .5s ease;
     }
@@ -623,4 +731,8 @@ footer .social-media ion-icon {
     .btn-white:hover {
         background: rgb(226, 226, 226); 
     }
+
+    /* --x-- Animations Desktop only --x-- */
 }
+
+/*--x-- RESPONSIVE DESIGN --x--*/

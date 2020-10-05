@@ -21,54 +21,63 @@
         <a href="pages/recipe.html">Recipes</a>
         <a href="#">Subscribe</a>
     </nav>
-    <!-- Menu icon -->
-    <section class="top-menu">
-        <a><img src="./img/menu.svg" alt="menu icon" class="menu-icon"></a>
-    </section>
+
     <!-- Hero -->
     <header class="hero">
-        <a href="index.html"><h1>Autumn Craftings</h1></a>
+        <section class="overlay"></section>
+        <!-- Menu icon -->
+        <section class="top-menu">
+            <a class="menu-icon">
+                <svg width="45" height="43" viewBox="0 0 72 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="menu-first-line" d="M4 4H68" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round"/>
+                    <path class="menu-middle-line" d="M4 22H68" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round"/>
+                    <path class="menu-last-line" d="M4 39H68" stroke="white" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round"/>
+                </svg>
+            </a>      
+        </section>
+        <a href="index.html" class="hero-heading"><h1>Autumn Craftings</h1></a>
         <aside class="social-media-hero">
             <a><ion-icon name="logo-facebook"></ion-icon></a>
             <a><ion-icon name="logo-instagram"></ion-icon></a>
             <a><ion-icon name="logo-pinterest"></ion-icon></a>
         </aside>
     </header>
-
     
     <!-- Article Top Crafts Grid -->
     <article class="top-crafts basic-styling">
         <section class="white-space"></section>
         <h2>Our Top Crafts</h2>
         <section class="crafts-grid">
-            <article class="crafts-grid-boxes"> 
-                <a><figure><img src="./img/craft-1.jpg" alt="Pumpkins"></figure></a>
-                <h3>Pumpkins</h3>
-            </article>
-            <article class="crafts-grid-boxes">
-                <a><figure><img src="./img/craft-2.jpg" alt="Wreth"></figure></a>
-                <h3>Wreth</h3>
-            </article>
-            <article class="crafts-grid-boxes">
-                <a><figure><img src="./img/craft-3.jpg" alt="Hot tea"></figure></a>
-                <h3>Hot Tea</h3>
-            </article>
-            <article class="grid-desktop-only crafts-grid-boxes">
-                <a><figure><img src="./img/craft-4.jpg" alt="Crispy leaves"></figure></a>
-                <h3>Crispy <br> Leaves</h3>
-            </article>
-            <article class="grid-desktop-only crafts-grid-boxes">
-                <a><figure><img src="./img/craft-5.jpg" alt="Colors"></figure></a>
-                <h3>Colors</h3>
-            </article>
-
-        <a>
-            <article class="grid-desktop-only crafts-grid-boxes">
-                <figure><img src="./img/craft-6.jpg" alt="Party essentials"></figure>
-                <h3>Party <br> Essentials</h3>
-            </article>
-        </a>
-
+            <a class="crafts-grid-boxes grid-box-1 background-filter">
+                <article class="crafts-grid-boxes-content"> 
+                    Pumpkins
+                </article>
+            </a>
+            <a class="crafts-grid-boxes grid-box-2 background-filter">
+                <article class="crafts-grid-boxes-content">
+                    Wreth
+                </article>
+            </a>
+            <a class="crafts-grid-boxes grid-box-3 background-filter">
+                <article class="crafts-grid-boxes-content">
+                    Hot Tea
+                </article>
+            </a>
+            <a class="crafts-grid-boxes grid-box-4 background-filter grid-desktop-only">
+                <article class="crafts-grid-boxes-content">
+                    Crispy<br>Leaves
+                </article>
+            </a>
+            <a class="crafts-grid-boxes grid-box-5 background-filter grid-desktop-only">
+                <article class="crafts-grid-boxes-content">
+                    Colors
+                </article>
+            </a>
+            <a class="crafts-grid-boxes grid-box-6 background-filter grid-desktop-only">
+                <article class="crafts-grid-boxes-content">
+                    Party<br>Essentials
+                </article>
+            </a>
         </section>
         <section class="go-to-all-crafts">
             <a><h4>See more</h4></a>
@@ -87,7 +96,7 @@
                 Nullam egestas volutpat nisl eget efficitur.</p>
         </section>
         <figure><img src="./img/hot-chocolate.jpg" alt="hot chocolate"></figure>
-        <a href="./pages/recipe.html"><button class="btn btn-white">Go to recipe</button></a>
+        <button class="btn btn-white" id="goToRecipePageBtn">Go to recipe</button>
     </article>
     
     <!-- Article Subscribe -->
