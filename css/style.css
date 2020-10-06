@@ -118,29 +118,23 @@ body.menu-open .menu-middle-line {
 
 body.menu-open .menu-first-line {
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
     transform-origin: 25%;
-    -webkit-transform-origin: 25%;
     transition: all .3s ease;
 } 
 
 body.menu-open .menu-last-line {
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
     transform-origin: 25%;
-    -webkit-transform-origin: 25%;
     transition: all .3s ease;  
 } 
 
 /*To make X back to hamburger in Safari Browser*/
 .menu-first-line {
     transform: rotate(0);
-    -webkit-transform: rotate(0);
 } 
 
 .menu-last-line {
     transform: rotate(0);
-    -webkit-transform: rotate(0);
 } 
 
 nav a {
@@ -192,10 +186,7 @@ body.menu-open nav a:nth-child(3) {
 .hero {
     background: url(../img/header-small.jpg);  
     background-repeat: no-repeat;
-    background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;   
+    background-size: cover; 
     height: 60vh;
     display: flex;
     justify-content: center;
