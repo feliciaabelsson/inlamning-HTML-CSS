@@ -1,12 +1,12 @@
   // toggle menu
   document.querySelector('.menu-icon')
   .addEventListener('click', function(){
-      // Körs vid ett klick
+      // Runs when clicking on menu-icon
       document.querySelector('body')
       .classList.toggle('menu-open')
   });
 
-  // close on click on link
+  // closing menu when click on menu option 
   document.querySelectorAll('nav > a') //get all a:s inside nav
   .forEach(link => { //for each element in returned list 
       link.addEventListener('click', function(){
@@ -14,11 +14,8 @@
           document.querySelector('body')
           .classList.toggle('menu-open')
       })
-  })
+  });
 
-  // going to recipe page when clicking on button
-  document.getElementById('goToRecipePageBtn').onclick = function() {
-      location.href = "./pages/recipe.html";
-  };
+  
     
 

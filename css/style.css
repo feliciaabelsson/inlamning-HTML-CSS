@@ -240,7 +240,7 @@ article.top-crafts {
     box-shadow: 0 0 2rem rgba(0,0,0, .1);
 }
 
-article.top-crafts h2 {
+.top-crafts h2 {
     text-align: center;
 }
 
@@ -332,7 +332,7 @@ article.top-crafts h2 {
     animation: moving-arrows .7s ease-in-out infinite alternate;
 }
 
-/*Gör så att pilarna rör sig fram och tillbaka*/
+/*Makes arrows move*/
 @keyframes moving-arrows {
     from {
         transform: translateX(0);
@@ -352,11 +352,11 @@ article.hot-chocolate {
     background: var(--orange);
 }
 
-article.hot-chocolate p {
+.hot-chocolate p {
     padding: 0 2rem;
 }
 
-article.hot-chocolate figure {
+.hot-chocolate figure {
    margin: 0;
    padding: 2rem;   
 }
@@ -386,13 +386,13 @@ article.subscribe {
     text-align: center;
 }
 
-article.subscribe h2,
-article.subscribe p,
-article.subscribe a {
+.subscribe h2,
+.subscribe p,
+.subscribe a {
     color: white;
 }
 
-article.subscribe p {
+.subscribe p {
     padding: 0 3rem; 
 }
 
@@ -410,7 +410,7 @@ article.subscribe p {
     box-shadow: 0 0 2rem rgba(0,0,0, .1);
 }
 
-.recipe .ingredients,
+.ingredients,
 .instructions {
     padding: 1rem 2rem 0 2rem;
 }
@@ -459,11 +459,8 @@ aside.share-options ion-icon {
     color: var(--dark-grey);
 }
 
-.recipe h4 {
-    text-align: center;
-}
-
-section.ingredients {
+.recipe h4,
+.ingredients {
     text-align: center;
 }
 
@@ -552,6 +549,8 @@ footer .social-media ion-icon {
         height: 4rem;
         transform: translateY(-3.9rem);
         z-index: 12;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
 
     h1 {
@@ -663,6 +662,7 @@ footer .social-media ion-icon {
     figure.hot-chocolate-img {
         grid-row: 1 / 2;
         padding-top: 4rem;
+        align-self: center;
     }
 
     section.instructions {
